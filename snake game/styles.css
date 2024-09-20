@@ -1,0 +1,97 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e2f; /* Darker background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c2c3e; /* Container background color */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    width: 500px; /* Container width */
+}
+
+#gameCanvas {
+    border: 5px solid #4a4a6a; /* Border with a shade */
+    background: linear-gradient(145deg, #3a3a50, #2b2b3c); /* Subtle gradient */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below the canvas */
+}
+
+.score {
+    color: #fff;
+    font-size: 28px;
+    padding: 10px 20px;
+    background-color: #444; /* Background for the score */
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Shadow for score display */
+}
+
+.score span {
+    font-weight: bold;
+    color: #ffcc00; /* Highlighted score color */
+}
+
+#gameCanvas {
+    width: 400px;
+    height: 400px;
+}
+
+/* Add a hover effect to the canvas */
+#gameCanvas:hover {
+    border-color: #ffcc00; /* Border color changes on hover */
+}
+
+/* Add transition effects */
+#gameCanvas,
+.score {
+    transition: all 0.3s ease;
+}
+
+/* Add animation to the score */
+@keyframes scoreHighlight {
+    0% {
+        color: #ffcc00;
+    }
+    50% {
+        color: #fff;
+    }
+    100% {
+        color: #ffcc00;
+    }
+}
+
+.score span {
+    animation: scoreHighlight 1s infinite;
+}
+
+/* Add responsive design for smaller screens */
+@media (max-width: 600px) {
+    .game-container {
+        width: 90%; /* Adjust container width */
+    }
+
+    #gameCanvas {
+        width: 100%; /* Full width for canvas */
+        height: auto; /* Adjust height */
+    }
+
+    .score {
+        font-size: 20px; /* Smaller font size */
+    }
+}
